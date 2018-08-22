@@ -1,0 +1,5 @@
+<div style="display:flex;flex-wrap:wrap;">
+    <div *ngFor="let template of ts.templates | async" (click)="writeValue(template)" style="margin:16px;">
+        <img [src]="template.url" [alt]="template.name" style="max-width: 100px;max-height:100px;">
+    </div>
+</div>

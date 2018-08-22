@@ -1,0 +1,39 @@
+<style>
+    .meme-preview {
+        position: relative;
+        width: 100%;
+    }
+
+    .meme-preview .top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .meme-preview .bottom {
+        position: absolute;
+        bottom: 32px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .meme-preview img {
+        width:100%;
+    }
+</style>
+
+<div class="meme-preview" *ngIf="(meme && meme.template && meme.template.url); else noMeme">
+    <div class="top"
+    [style.color]="meme.topTextColor ? meme.topTextColor : '#000000'"
+    [style.fontSize]="(meme.topTextSize ? meme.topTextSize : 32) + 'px'">{{meme.topText}}</div>
+    <div class="bottom"
+    [style.color]="meme.bottomTextColor ? meme.bottomTextColor : '#000000'"
+    [style.fontSize]="(meme.bottomTextSize ? meme.bottomTextSize : 32) + 'px'">{{meme.bottomText}}</div>
+    <img [src]="meme.template.url">
+</div>
+<ng-template #noMeme>
+    <p>The supplied meme doesn't appear to be valid.</p>
+    <p>{{meme | json}}</p>
+</ng-template>

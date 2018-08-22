@@ -1,0 +1,36 @@
+<h2>Create a new Meme</h2>
+<form [formGroup]="memeForm" (submit)="create(memeForm.value)">
+    <label><span>Choose a Template</span>
+        <app-template-picker formControlName="template"></app-template-picker>
+    </label>
+
+    <label>
+        <span>Top Text</span>
+        <mat-form-field><input matInput formControlName="topText"></mat-form-field>
+        <input type="color" formControlName="topTextColor">
+        <input type="number" formControlName="topTextSize">
+    </label>
+
+    <label>
+        <span>Bottom Text</span>
+        <mat-form-field><input matInput formControlName="bottomText"></mat-form-field>
+        <input type="color" formControlName="bottomTextColor">
+        <input type="number" formControlName="bottomTextSize">
+    </label>
+
+    <label>
+        <span>Context URL</span>
+        <mat-form-field><input matInput formControlName="context"></mat-form-field>
+    </label>
+
+    <ng-container *ngIf="memeForm.value.template"><h3>Preview</h3>
+        <app-meme [meme]="memeForm.value"
+         style="max-width:400px;width:100%;"></app-meme>
+    </ng-container>
+
+
+    <div>
+        <button mat-raised-button color="primary" type="submit">Create</button>
+    </div>
+</form>
+{{memeForm.value | json}}
