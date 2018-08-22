@@ -11,6 +11,7 @@ import { MatButtonModule, MatInputModule } from '@angular/material';
 import { TemplatePickerComponent } from './new/template-picker/template-picker.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MemeComponent } from './meme/meme.component';
+import { MemeFeedbackComponent } from './meme-feedback/meme-feedback.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MemeComponent } from './meme/meme.component';
     PopularComponent,
     NewComponent,
     TemplatePickerComponent,
-    MemeComponent
+    MemeComponent,
+    MemeFeedbackComponent
   ],
   imports: [
     BrowserModule,

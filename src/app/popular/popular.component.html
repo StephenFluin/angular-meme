@@ -1,3 +1,7 @@
-<p>
-  popular works!
-</p>
+<div *ngIf="memes | async as memes; else noMeme">
+    <div *ngFor="let meme of memes">
+        <app-meme [meme]="meme"></app-meme>
+        <app-meme-feedback [meme]="meme"></app-meme-feedback>
+    </div>
+</div>
+<ng-template #noMeme>No memes found yet!</ng-template>

@@ -1,5 +1,5 @@
 <h2>Create a new Meme</h2>
-<form [formGroup]="memeForm" (submit)="create(memeForm.value)">
+<form [formGroup]="memeForm" (submit)="ms.create(memeForm.value)">
     <label><span>Choose a Template</span>
         <app-template-picker formControlName="template"></app-template-picker>
     </label>

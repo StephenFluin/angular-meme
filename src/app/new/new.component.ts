@@ -19,9 +19,7 @@ export class NewComponent {
         template: [null, Validators.required],
 
     });
-    constructor(private fb: FormBuilder, private ms: MemeService) {}
+    constructor(private fb: FormBuilder, public ms: MemeService) {}
 
-    create(meme: Meme) {
 
-    }
 }
